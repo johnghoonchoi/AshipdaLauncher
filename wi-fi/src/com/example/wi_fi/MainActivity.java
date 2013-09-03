@@ -1,7 +1,7 @@
 /*
 * Author : JohnHoon..
 * Date 	 : 2013 - 08 - 22
-* Description : This is wi-fi MainActivity, 어쩌구저쩌구
+* Description : This is wi-fi MainActivity, choi zaseyo
 */
 package com.example.wi_fi;
 

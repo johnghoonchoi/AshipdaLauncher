@@ -17,5 +17,9 @@
             android:textOff="Button off"
             android:textOn="Button on"
             android:background="@drawable/toggle_bg" />
+<<<<<<< HEAD
 
+=======
+			<!-- background - > res @drawable/toggle_bg.xml -->
+>>>>>>> b8901b040be775367e1a08922c76d309f4924dc7
 </RelativeLayout>

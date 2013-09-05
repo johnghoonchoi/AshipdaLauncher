@@ -1,0 +1,206 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#0000"
+    android:orientation="vertical"
+    android:weightSum="4"  >
+<!-- mother layout -->
+    
+    
+	<!-- first layout start -->    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+            
+            <Button
+            android:id="@+id/id_1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            />
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+            
+            <Button
+            android:id="@+id/id_2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="I'm Button"
+            />
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+            
+            <Button
+            android:id="@+id/id_3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="I'm Button"
+            />
+            
+        </LinearLayout>
+    </LinearLayout>
+	<!-- first layout end -->    
+    
+    <!-- sec layout start -->    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+            
+            <Button
+            android:id="@+id/id_4"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="인터넷 ㄱㄱ"
+            />
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+            
+            <Button
+            android:id="@+id/id_5"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="I'm Button"
+            />
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+            
+            <Button
+            android:id="@+id/id_6"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="I'm Button"
+            />
+            
+        </LinearLayout>
+    </LinearLayout>
+	<!-- sec layout end -->    
+    
+    
+    <!-- thr layout start -->    
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+            
+            <Button
+            android:id="@+id/id_7"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="메시지 ㄱㄱ"
+            />
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+            
+            <Button
+            android:id="@+id/id_8"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="카메라 ㄱㄱ"
+            />
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+            
+            <Button
+            android:id="@+id/id_9"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="갤러리 ㄱㄱ"
+            />
+            
+        </LinearLayout>
+    </LinearLayout>
+	<!-- thr layout end -->    
+    
+    <!-- for layout start -->    
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2" >
+            
+            <Button
+            android:id="@+id/id_10"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="전화 ㄱㄱ"
+            />
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+            
+            <Button
+            android:id="@+id/id_11"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="I'm Button"
+            />
+            
+        </LinearLayout>
+    </LinearLayout>
+	<!-- for layout end -->    
+	
+</LinearLayout>

@@ -47,12 +47,17 @@
             android:layout_height="fill_parent"
             android:layout_weight="1" >
             
-            <Button
-            android:id="@+id/id_3"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:text="I'm Button"
-            />
+            <!-- 와이파이 토글버튼 -->
+           <ToggleButton
+            android:id="@+id/wifibtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:text="Toggle wifibtn"
+            android:textOff="Button off"
+            android:textOn="Button on"
+            android:background="@drawable/toggle_bg" />
+			<!-- background - > res @drawable/toggle_bg.xml -->
             
         </LinearLayout>
     </LinearLayout>

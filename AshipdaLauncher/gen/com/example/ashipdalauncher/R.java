@@ -21,25 +21,34 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int toggle_bg=0x7f020001;
-        public static final int toggle_on_off=0x7f020002;
-        public static final int wifioff=0x7f020003;
-        public static final int wifion=0x7f020004;
+        public static final int camera=0x7f020000;
+        public static final int folder=0x7f020001;
+        public static final int gallery=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int internet=0x7f020004;
+        public static final int mms=0x7f020005;
+        public static final int phonecall=0x7f020006;
+        public static final int sos=0x7f020007;
+        public static final int toggle_bg=0x7f020008;
+        public static final int toggle_on_off=0x7f020009;
+        public static final int wifioff=0x7f02000a;
+        public static final int wifion=0x7f02000b;
+        public static final int wifion2=0x7f02000c;
+        public static final int wifion3=0x7f02000d;
     }
     public static final class id {
         public static final int action_settings=0x7f08000b;
-        public static final int id_1=0x7f080000;
-        public static final int id_10=0x7f080009;
-        public static final int id_11=0x7f08000a;
-        public static final int id_2=0x7f080001;
-        public static final int id_4=0x7f080003;
-        public static final int id_5=0x7f080004;
-        public static final int id_6=0x7f080005;
-        public static final int id_7=0x7f080006;
-        public static final int id_8=0x7f080007;
-        public static final int id_9=0x7f080008;
-        public static final int wifibtn=0x7f080002;
+        public static final int btnapp=0x7f080005;
+        public static final int btncamera=0x7f080007;
+        public static final int btnclock=0x7f080001;
+        public static final int btndate=0x7f080000;
+        public static final int btngallery=0x7f080008;
+        public static final int btninternet=0x7f080003;
+        public static final int btnmms=0x7f080006;
+        public static final int btnphonecall=0x7f080009;
+        public static final int btnrecall=0x7f08000a;
+        public static final int btnsos=0x7f080004;
+        public static final int btnwifi=0x7f080002;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;

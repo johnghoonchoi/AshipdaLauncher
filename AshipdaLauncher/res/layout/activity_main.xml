@@ -19,12 +19,13 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1" >
-            
+
             <Button
-            android:id="@+id/id_1"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            />
+                android:id="@+id/btndate"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/wifion3"
+                />
             
         </LinearLayout>
 
@@ -34,11 +35,16 @@
             android:layout_weight="1" >
             
             <Button
-            android:id="@+id/id_2"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:text="I'm Button"
-            />
+                android:id="@+id/btnclock"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:textIsSelectable="false"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:background="@drawable/wifion2"
+                 />
+            
             
         </LinearLayout>
 
@@ -48,15 +54,15 @@
             android:layout_weight="1" >
             
             <!-- 와이파이 토글버튼 -->
-           <ToggleButton
-            android:id="@+id/wifibtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="17dp"
-            android:text="Toggle wifibtn"
-            android:textOff="Button off"
-            android:textOn="Button on"
-            android:background="@drawable/toggle_bg" />
+
+            <ToggleButton
+                android:id="@+id/btnwifi"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/toggle_bg"
+                android:textOn=""
+				android:textOff=""
+				/>   
 			<!-- background - > res @drawable/toggle_bg.xml -->
             
         </LinearLayout>
@@ -77,10 +83,10 @@
             android:layout_weight="1" >
             
             <Button
-            android:id="@+id/id_4"
+            android:id="@+id/btninternet"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="인터넷 ㄱㄱ"
+            android:background="@drawable/internet"
             />
             
         </LinearLayout>
@@ -91,10 +97,10 @@
             android:layout_weight="1" >
             
             <Button
-            android:id="@+id/id_5"
+            android:id="@+id/btnsos"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="I'm Button"
+            android:background="@drawable/sos"
             />
             
         </LinearLayout>
@@ -105,10 +111,10 @@
             android:layout_weight="1" >
             
             <Button
-            android:id="@+id/id_6"
+            android:id="@+id/btnapp"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="I'm Button"
+            android:background="@drawable/folder"
             />
             
         </LinearLayout>
@@ -131,10 +137,10 @@
             android:layout_weight="1" >
             
             <Button
-            android:id="@+id/id_7"
+            android:id="@+id/btnmms"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="메시지 ㄱㄱ"
+            android:background="@drawable/mms"
             />
             
         </LinearLayout>
@@ -145,10 +151,10 @@
             android:layout_weight="1" >
             
             <Button
-            android:id="@+id/id_8"
+            android:id="@+id/btncamera"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="카메라 ㄱㄱ"
+            android:background="@drawable/camera"
             />
             
         </LinearLayout>
@@ -159,10 +165,10 @@
             android:layout_weight="1" >
             
             <Button
-            android:id="@+id/id_9"
+            android:id="@+id/btngallery"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="갤러리 ㄱㄱ"
+            android:background="@drawable/gallery"
             />
             
         </LinearLayout>
@@ -184,10 +190,10 @@
             android:layout_weight="2" >
             
             <Button
-            android:id="@+id/id_10"
+            android:id="@+id/btnphonecall"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="전화 ㄱㄱ"
+            android:background="@drawable/phonecall"
             />
             
         </LinearLayout>
@@ -198,10 +204,10 @@
             android:layout_weight="1" >
             
             <Button
-            android:id="@+id/id_11"
+            android:id="@+id/btnrecall"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="I'm Button"
+            android:text="재다이얼 들어갈 부분"
             />
             
         </LinearLayout>

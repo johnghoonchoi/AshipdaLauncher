@@ -25,6 +25,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:background="@drawable/wifion3"
+                android:textSize="50sp"
+                android:textStyle="bold"
                 />
             
         </LinearLayout>

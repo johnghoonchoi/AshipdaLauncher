@@ -4,14 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Timer;
-import java.util.TimerTask;
-
 import com.example.ashipdalauncher.util.LogUtil;
-
-import android.net.ConnectivityManager;
 import android.net.Uri;
-import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.*;
 import android.provider.CallLog.Calls;
@@ -22,7 +16,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.database.Cursor;
 import android.util.Log;
 import android.view.*;
@@ -31,7 +24,6 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 
@@ -42,23 +34,25 @@ implements OnClickListener, OnCheckedChangeListener  {
 	//	private final Handler handler = new Handler();	
 	//	
 	private SimpleDateFormat mClockFormat, mDateFormat;
-	private TextView mClock, mDate;
+	private TextView mClock, mDate, mReDial;
 	private Uri uri;
 	
-	private void initResource() {
+	private void initResource() { // 현재 날짜,시간 받아 화면에 출력해주는 부분
 		this.mClock = (TextView)this.findViewById(R.id.btnClock);
-		this.mClockFormat = new SimpleDateFormat("HH : mm : ss", Locale.getDefault());
+		this.mClockFormat = new SimpleDateFormat("HH"+"시 "+"mm"+"분", Locale.getDefault());
 		
 		this.mDate = (TextView)this.findViewById(R.id.btnDate);
-		this.mDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-		
+		this.mDateFormat = new SimpleDateFormat("yyyy년 MM월 dd일", Locale.getDefault());
+        this.mReDial = (TextView)this.findViewById(R.id.btnRedial); //재다이얼하려고 찾아서 ㅇㅇ 텍스트뷰 ㅇㅇ
+        		
+
 	
 		updateClockTime();
 
 	}
 
 	
-
+//현재  날짜,시간 받아 화면에 출력해주는 부분 허허허 + 재다이얼
 	private void updateClockTime() {
 		new Thread() {
 			public void run() {
@@ -71,9 +65,26 @@ implements OnClickListener, OnCheckedChangeListener  {
 								mClock.setText(mClockFormat.format(new Date()));
 								mDate.setText(mDateFormat.format(new Date()));
 								//LogUtil.v(mClockFormat.format(new Date()));
+								
+								//redial start
+								//TODO:if you have time..... query modify to only set last number of my send list.not all phone call list
+								//ㅡㅡ 스레드에 넣어야되...........
+								Cursor c = getContentResolver().query(Calls.CONTENT_URI, null, null, null, Calls.DATE + " DESC");
+						        if (c != null) {
+						            if (c.moveToFirst()) {
+						                c.getString(c.getColumnIndex(Calls.CACHED_NAME));
+						                uri = Uri.parse("tel:" + c.getString(c.getColumnIndex(Calls.NUMBER)));
+						               // LogUtil.v("uri: " + uri.toString());
+						            } 
+						       // Uri is member var
+						       //     c.close();
+						        }
+				        		mReDial.setText(c.getString(c.getColumnIndex(Calls.NUMBER))); 
+						        //Last num send to btn11(redial btn)
+				        		//end redial
 							}
 						});
-						Thread.sleep(300);
+						Thread.sleep(400);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
@@ -103,7 +114,7 @@ implements OnClickListener, OnCheckedChangeListener  {
 		ToggleButton wifi=(ToggleButton)findViewById(R.id.btnWifi);
 		wifi.setOnClickListener((OnClickListener)this);	
 
-		//TODO: button 이름 숫자로 쓴 넘 머리박기
+		//TODO: button 이름 숫자로 쓴 넘 머리박기: 쾅쾅쾅 
 		Button btn1=(Button)findViewById(R.id.btnDate);
 		btn1.setOnClickListener((OnClickListener) this);	
 
@@ -142,27 +153,7 @@ implements OnClickListener, OnCheckedChangeListener  {
 			Log.v("test", "2");
 			wifi.setChecked(false);
 		}
-		
-		
-		//redial start
-		
-		Cursor c = this.getContentResolver().query(Calls.CONTENT_URI, null, null, null, Calls.DATE + " DESC");
-        if (c != null) {
-            if (c.moveToFirst()) {
-                c.getString(c.getColumnIndex(Calls.CACHED_NAME));
-                uri = Uri.parse("tel:" + c.getString(c.getColumnIndex(Calls.NUMBER)));
-                LogUtil.v("uri: " + uri.toString());
-
-        		
-            }
-       //     c.close();
-        }
-        btn11.setText(c.getString(c.getColumnIndex(Calls.NUMBER)));
-		
-		
 	}
-
-
 
 	//버튼이벤트처리
 	public void onClick(View v) {

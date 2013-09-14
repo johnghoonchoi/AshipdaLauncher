@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.*;
+import android.provider.CallLog.Calls;
 import android.provider.MediaStore;
 import android.app.Activity;
 import android.content.ComponentName;
@@ -22,6 +23,7 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.database.Cursor;
 import android.util.Log;
 import android.view.*;
 import android.view.View.OnClickListener;
@@ -41,40 +43,23 @@ implements OnClickListener, OnCheckedChangeListener  {
 	//	
 	private SimpleDateFormat mClockFormat, mDateFormat;
 	private TextView mClock, mDate;
+	private Uri uri;
 	
 	private void initResource() {
-		// TODO Auto-generated method stub
-		this.mClock = (TextView)this.findViewById(R.id.btnclock);
+		this.mClock = (TextView)this.findViewById(R.id.btnClock);
 		this.mClockFormat = new SimpleDateFormat("HH : mm : ss", Locale.getDefault());
 		
-		this.mDate = (TextView)this.findViewById(R.id.btndate);
+		this.mDate = (TextView)this.findViewById(R.id.btnDate);
 		this.mDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 		
-
-
-		//		TimerTask clock = new TimerTask()
-		//		{
-		//			public void run(){
-		//				updateClockTime();
-		//			}
-		//		};
-		//		
-		//		Timer timer = new Timer();
-		//		timer.schedule(clock, 0,1000);
-
+	
 		updateClockTime();
-		//		Thread uiThread =  new Thread(new Runnable() {
-		//		    @Override
-		//		    public void run() {    
-		//		        
-		//		    }
-		//		});
-		//		uiThread.start();
+
 	}
 
+	
 
 	private void updateClockTime() {
-
 		new Thread() {
 			public void run() {
 				while (true) {
@@ -112,42 +97,41 @@ implements OnClickListener, OnCheckedChangeListener  {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
 		initResource();
-
-
+		
 		//create button
-		ToggleButton wifi=(ToggleButton)findViewById(R.id.btnwifi);
+		ToggleButton wifi=(ToggleButton)findViewById(R.id.btnWifi);
 		wifi.setOnClickListener((OnClickListener)this);	
 
-		Button btn1=(Button)findViewById(R.id.btndate);
+		//TODO: button 이름 숫자로 쓴 넘 머리박기
+		Button btn1=(Button)findViewById(R.id.btnDate);
 		btn1.setOnClickListener((OnClickListener) this);	
 
-		Button btn2=(Button)findViewById(R.id.btnclock);
+		Button btn2=(Button)findViewById(R.id.btnClock);
 		btn2.setOnClickListener((OnClickListener) this);
 
-		Button btninternet=(Button)findViewById(R.id.btninternet);
+		Button btninternet=(Button)findViewById(R.id.btnInternet);
 		btninternet.setOnClickListener((OnClickListener) this);
 
-		Button btnsos=(Button)findViewById(R.id.btnsos);
+		Button btnsos=(Button)findViewById(R.id.btnSos);
 		btnsos.setOnClickListener((OnClickListener) this);
 
-		Button btn6=(Button)findViewById(R.id.btnapp);
+		Button btn6=(Button)findViewById(R.id.btnApp);
 		btn6.setOnClickListener((OnClickListener) this);
 
-		Button btn7=(Button)findViewById(R.id.btnmms);
+		Button btn7=(Button)findViewById(R.id.btnMms);
 		btn7.setOnClickListener((OnClickListener) this);
 
-		Button btn8=(Button)findViewById(R.id.btncamera);
+		Button btn8=(Button)findViewById(R.id.btnCamera);
 		btn8.setOnClickListener((OnClickListener) this);
 
-		Button btn9=(Button)findViewById(R.id.btngallery);
+		Button btn9=(Button)findViewById(R.id.btnGallery);
 		btn9.setOnClickListener((OnClickListener) this);
 
-		Button btn10=(Button)findViewById(R.id.btnphonecall);
+		Button btn10=(Button)findViewById(R.id.btnPhoneCall);
 		btn10.setOnClickListener((OnClickListener) this);
 
-		Button btn11=(Button)findViewById(R.id.btnrecall);
+		Button btn11=(Button)findViewById(R.id.btnRedial);
 		btn11.setOnClickListener((OnClickListener) this);
 
 		//wifi state changed
@@ -158,6 +142,24 @@ implements OnClickListener, OnCheckedChangeListener  {
 			Log.v("test", "2");
 			wifi.setChecked(false);
 		}
+		
+		
+		//redial start
+		
+		Cursor c = this.getContentResolver().query(Calls.CONTENT_URI, null, null, null, Calls.DATE + " DESC");
+        if (c != null) {
+            if (c.moveToFirst()) {
+                c.getString(c.getColumnIndex(Calls.CACHED_NAME));
+                uri = Uri.parse("tel:" + c.getString(c.getColumnIndex(Calls.NUMBER)));
+                LogUtil.v("uri: " + uri.toString());
+
+        		
+            }
+       //     c.close();
+        }
+        btn11.setText(c.getString(c.getColumnIndex(Calls.NUMBER)));
+		
+		
 	}
 
 
@@ -165,32 +167,32 @@ implements OnClickListener, OnCheckedChangeListener  {
 	//버튼이벤트처리
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.btndate:
+		case R.id.btnDate:
 			Intent it_date = new Intent(Intent.ACTION_MAIN);
 			it_date.setComponent(new ComponentName("com.android.calendar","com.android.calendar.LaunchActivity"));
 			startActivity(it_date);
 
 			break;
 
-		case R.id.btnclock:
+		case R.id.btnClock:
 			Intent it_clock= new Intent(Intent.ACTION_MAIN);
 			it_clock.setComponent(new ComponentName("com.sec.android.app.clockpackage", "com.sec.android.app.clockpackage.ClockPackage"));
 			startActivity(it_clock);
 			break;
 
-		case R.id.btnwifi:
+		case R.id.btnWifi:
 			final WifiManager wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 			// button clicked wifi changed
 			wifi.setWifiEnabled(!wifi.isWifiEnabled());
 			break;
 
-		case R.id.btninternet:
+		case R.id.btnInternet:
 			Intent it_internet = new Intent(Intent.ACTION_MAIN);
 			it_internet.setComponent(new ComponentName("com.android.browser","com.android.browser.BrowserActivity"));
 			startActivity(it_internet);
 			break;
 
-		case R.id.btnsos:
+		case R.id.btnSos:
 			List<PackageInfo> packageinfo = getPackageManager().getInstalledPackages(PackageManager.GET_ACTIVITIES);
 
 			for(int i =0;i< packageinfo .size();i++){
@@ -203,10 +205,10 @@ implements OnClickListener, OnCheckedChangeListener  {
 			}
 			break;
 
-		case R.id.btnapp:
+		case R.id.btnApp:
 			break;
 
-		case R.id.btnmms:
+		case R.id.btnMms:
 			Intent it_mms = new Intent(Intent.ACTION_MAIN);
 			it_mms.setComponent(new ComponentName("com.android.mms","com.android.mms.ui.ConversationComposer"));
 			startActivity(it_mms);
@@ -216,26 +218,29 @@ implements OnClickListener, OnCheckedChangeListener  {
 
 			break;
 
-		case R.id.btncamera:
+		case R.id.btnCamera:
 			Intent it_camera = new Intent (MediaStore.ACTION_IMAGE_CAPTURE);
 			it_camera.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 			startActivity(it_camera);			
 			break;
 
-		case R.id.btngallery:
+		case R.id.btnGallery:
 			Intent it_gallery = new Intent (Intent.ACTION_PICK);
 			it_gallery.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
 			it_gallery.setData(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 			startActivity(it_gallery);
 			break;
 
-		case R.id.btnphonecall:
-			Intent itphonecall = new Intent(Intent.ACTION_DIAL);  
-			startActivity(itphonecall);  
+		case R.id.btnPhoneCall:
+			Intent itPhoneCall = new Intent(Intent.ACTION_DIAL);  
+			startActivity(itPhoneCall);  
 			break;
 
-		case R.id.btnrecall:
-			break;
+		case R.id.btnRedial: 
+            Intent itPhoneReDial = new Intent(Intent.ACTION_DIAL);  
+            itPhoneReDial.setData(uri);
+            startActivity(itPhoneReDial);  
+            break;
 
 		}
 	}
@@ -249,7 +254,6 @@ implements OnClickListener, OnCheckedChangeListener  {
 
 	@Override
 	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-		// TODO Auto-generated method stub
 		//	Toast.makeText(this,
 		//			isChecked ? wifibtn.getTextOn() : wifibtn.getTextOff(),
 		//			Toast.LENGTH_SHORT).show();

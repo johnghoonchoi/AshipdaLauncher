@@ -38,17 +38,17 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f08000b;
-        public static final int btnapp=0x7f080005;
-        public static final int btncamera=0x7f080007;
-        public static final int btnclock=0x7f080001;
-        public static final int btndate=0x7f080000;
-        public static final int btngallery=0x7f080008;
-        public static final int btninternet=0x7f080003;
-        public static final int btnmms=0x7f080006;
-        public static final int btnphonecall=0x7f080009;
-        public static final int btnrecall=0x7f08000a;
-        public static final int btnsos=0x7f080004;
-        public static final int btnwifi=0x7f080002;
+        public static final int btnApp=0x7f080005;
+        public static final int btnCamera=0x7f080007;
+        public static final int btnClock=0x7f080001;
+        public static final int btnDate=0x7f080000;
+        public static final int btnGallery=0x7f080008;
+        public static final int btnInternet=0x7f080003;
+        public static final int btnMms=0x7f080006;
+        public static final int btnPhoneCall=0x7f080009;
+        public static final int btnRedial=0x7f08000a;
+        public static final int btnSos=0x7f080004;
+        public static final int btnWifi=0x7f080002;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;

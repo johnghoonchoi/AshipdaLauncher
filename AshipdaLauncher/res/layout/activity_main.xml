@@ -21,7 +21,7 @@
             android:layout_weight="1" >
 
             <Button
-                android:id="@+id/btndate"
+                android:id="@+id/btnDate"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:background="@drawable/wifion3"
@@ -37,7 +37,7 @@
             android:layout_weight="1" >
             
             <Button
-                android:id="@+id/btnclock"
+                android:id="@+id/btnClock"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:gravity="center"
@@ -58,7 +58,7 @@
             <!-- 와이파이 토글버튼 -->
 
             <ToggleButton
-                android:id="@+id/btnwifi"
+                android:id="@+id/btnWifi"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:background="@drawable/toggle_bg"
@@ -85,7 +85,7 @@
             android:layout_weight="1" >
             
             <Button
-            android:id="@+id/btninternet"
+            android:id="@+id/btnInternet"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:background="@drawable/internet"
@@ -99,7 +99,7 @@
             android:layout_weight="1" >
             
             <Button
-            android:id="@+id/btnsos"
+            android:id="@+id/btnSos"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:background="@drawable/sos"
@@ -113,7 +113,7 @@
             android:layout_weight="1" >
             
             <Button
-            android:id="@+id/btnapp"
+            android:id="@+id/btnApp"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:background="@drawable/folder"
@@ -139,7 +139,7 @@
             android:layout_weight="1" >
             
             <Button
-            android:id="@+id/btnmms"
+            android:id="@+id/btnMms"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:background="@drawable/mms"
@@ -153,7 +153,7 @@
             android:layout_weight="1" >
             
             <Button
-            android:id="@+id/btncamera"
+            android:id="@+id/btnCamera"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:background="@drawable/camera"
@@ -167,7 +167,7 @@
             android:layout_weight="1" >
             
             <Button
-            android:id="@+id/btngallery"
+            android:id="@+id/btnGallery"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:background="@drawable/gallery"
@@ -192,7 +192,7 @@
             android:layout_weight="2" >
             
             <Button
-            android:id="@+id/btnphonecall"
+            android:id="@+id/btnPhoneCall"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:background="@drawable/phonecall"
@@ -206,7 +206,7 @@
             android:layout_weight="1" >
             
             <Button
-            android:id="@+id/btnrecall"
+            android:id="@+id/btnRedial"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="재다이얼 들어갈 부분"

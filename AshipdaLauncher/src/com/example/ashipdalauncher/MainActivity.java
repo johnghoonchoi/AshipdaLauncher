@@ -37,13 +37,13 @@ implements OnClickListener, OnCheckedChangeListener  {
 	private TextView mClock, mDate, mReDial;
 	private Uri uri;
 	
-	private void initResource() { // ÇöÀç ³¯Â¥,½Ã°£ ¹Ş¾Æ È­¸é¿¡ Ãâ·ÂÇØÁÖ´Â ºÎºĞ
+	private void initResource() { // í˜„ì¬ ë‚ ì§œ,ì‹œê°„ ë°›ì•„ í™”ë©´ì— ì¶œë ¥í•´ì£¼ëŠ” ë¶€ë¶„
 		this.mClock = (TextView)this.findViewById(R.id.btnClock);
-		this.mClockFormat = new SimpleDateFormat("HH"+"½Ã "+"mm"+"ºĞ", Locale.getDefault());
+		this.mClockFormat = new SimpleDateFormat("HH"+"ì‹œ "+"mm"+"ë¶„", Locale.getDefault());
 		
 		this.mDate = (TextView)this.findViewById(R.id.btnDate);
-		this.mDateFormat = new SimpleDateFormat("yyyy³â MM¿ù ddÀÏ", Locale.getDefault());
-        this.mReDial = (TextView)this.findViewById(R.id.btnRedial); //Àç´ÙÀÌ¾óÇÏ·Á°í Ã£¾Æ¼­ ¤·¤· ÅØ½ºÆ®ºä ¤·¤·
+		this.mDateFormat = new SimpleDateFormat("yyyyë…„ MMì›” ddì¼", Locale.getDefault());
+        this.mReDial = (TextView)this.findViewById(R.id.btnRedial); //ì¬ë‹¤ì´ì–¼í•˜ë ¤ê³  ì°¾ì•„ì„œ ã…‡ã…‡ í…ìŠ¤íŠ¸ë·° ã…‡ã…‡
         		
 
 	
@@ -52,7 +52,7 @@ implements OnClickListener, OnCheckedChangeListener  {
 	}
 
 	
-//ÇöÀç  ³¯Â¥,½Ã°£ ¹Ş¾Æ È­¸é¿¡ Ãâ·ÂÇØÁÖ´Â ºÎºĞ ÇãÇãÇã + Àç´ÙÀÌ¾ó
+//í˜„ì¬  ë‚ ì§œ,ì‹œê°„ ë°›ì•„ í™”ë©´ì— ì¶œë ¥í•´ì£¼ëŠ” ë¶€ë¶„ í—ˆí—ˆí—ˆ + ì¬ë‹¤ì´ì–¼
 	private void updateClockTime() {
 		new Thread() {
 			public void run() {
@@ -68,7 +68,7 @@ implements OnClickListener, OnCheckedChangeListener  {
 								
 								//redial start
 								//TODO:if you have time..... query modify to only set last number of my send list.not all phone call list
-								//¤Ñ¤Ñ ½º·¹µå¿¡ ³Ö¾î¾ßµÇ...........
+								//ã…¡ã…¡ ìŠ¤ë ˆë“œì— ë„£ì–´ì•¼ë˜...........
 								Cursor c = getContentResolver().query(Calls.CONTENT_URI, null, null, null, Calls.DATE + " DESC");
 						        if (c != null) {
 						            if (c.moveToFirst()) {
@@ -114,7 +114,7 @@ implements OnClickListener, OnCheckedChangeListener  {
 		ToggleButton wifi=(ToggleButton)findViewById(R.id.btnWifi);
 		wifi.setOnClickListener((OnClickListener)this);	
 
-		//TODO: button ÀÌ¸§ ¼ıÀÚ·Î ¾´ ³Ñ ¸Ó¸®¹Ú±â: ÄçÄçÄç 
+		//TODO: button ì´ë¦„ ìˆ«ìë¡œ ì“´ ë„˜ ë¨¸ë¦¬ë°•ê¸°: ì¾…ì¾…ì¾… 
 		Button btn1=(Button)findViewById(R.id.btnDate);
 		btn1.setOnClickListener((OnClickListener) this);	
 
@@ -155,7 +155,7 @@ implements OnClickListener, OnCheckedChangeListener  {
 		}
 	}
 
-	//¹öÆ°ÀÌº¥Æ®Ã³¸®
+	//ë²„íŠ¼ì´ë²¤íŠ¸ì²˜ë¦¬
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.btnDate:
@@ -188,9 +188,9 @@ implements OnClickListener, OnCheckedChangeListener  {
 
 			for(int i =0;i< packageinfo .size();i++){
 				PackageInfo pi =  packageinfo .get(i);
-				String appname = pi.packageName;        // ÆĞÅ°Áö¸í
+				String appname = pi.packageName;        // íŒ¨í‚¤ì§€ëª…
 				if(pi.activities != null){
-					String appclassname =pi.activities[0].name;        // Å¬·¡½º¸í
+					String appclassname =pi.activities[0].name;        // í´ë˜ìŠ¤ëª…
 					Log.d(appname,appclassname);
 				} 
 			}
@@ -252,7 +252,3 @@ implements OnClickListener, OnCheckedChangeListener  {
 
 
 }
-
-
-
-

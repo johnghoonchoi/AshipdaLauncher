@@ -17,7 +17,7 @@ public class LogUtil {
 	{
 		if(debug) {
 			android.util.Log.v(Tag, new Exception().getStackTrace()[1].getClassName() + "::" 
-					+ new Exception().getStackTrace()[1].getMethodName() + "():" + log); //ÇÑ ¼öÁØ ÀÌÀüÀÇ Å¬·¡½º¸í°ú ¸Ş¼Òµå¸í È£Ãâ
+					+ new Exception().getStackTrace()[1].getMethodName() + "():" + log); //í•œ ìˆ˜ì¤€ ì´ì „ì˜ í´ë˜ìŠ¤ëª…ê³¼ ë©”ì†Œë“œëª… í˜¸ì¶œ
 		}
 	}
 
@@ -26,7 +26,7 @@ public class LogUtil {
 	{
 		if(debug) {
 			android.util.Log.d(Tag, new Exception().getStackTrace()[1].getClassName() + "::" 
-					+ new Exception().getStackTrace()[1].getMethodName() + "():" + log); //ÇÑ ¼öÁØ ÀÌÀüÀÇ Å¬·¡½º¸í°ú ¸Ş¼Òµå¸í È£Ãâ
+					+ new Exception().getStackTrace()[1].getMethodName() + "():" + log); //í•œ ìˆ˜ì¤€ ì´ì „ì˜ í´ë˜ìŠ¤ëª…ê³¼ ë©”ì†Œë“œëª… í˜¸ì¶œ
 		}
 	}
 
@@ -35,7 +35,7 @@ public class LogUtil {
 	{
 		if(debug) {
 			android.util.Log.i(Tag, new Exception().getStackTrace()[1].getClassName() + "::" 
-					+ new Exception().getStackTrace()[1].getMethodName() + "():" + log); //ÇÑ ¼öÁØ ÀÌÀüÀÇ Å¬·¡½º¸í°ú ¸Ş¼Òµå¸í È£Ãâ
+					+ new Exception().getStackTrace()[1].getMethodName() + "():" + log); //í•œ ìˆ˜ì¤€ ì´ì „ì˜ í´ë˜ìŠ¤ëª…ê³¼ ë©”ì†Œë“œëª… í˜¸ì¶œ
 		}
 	}
 
@@ -43,13 +43,13 @@ public class LogUtil {
 	public static void w(String log)
 	{
 		android.util.Log.w(Tag, new Exception().getStackTrace()[1].getClassName() + "::" 
-				+ new Exception().getStackTrace()[1].getMethodName() + "():" + log); //ÇÑ ¼öÁØ ÀÌÀüÀÇ Å¬·¡½º¸í°ú ¸Ş¼Òµå¸í È£Ãâ
+				+ new Exception().getStackTrace()[1].getMethodName() + "():" + log); //í•œ ìˆ˜ì¤€ ì´ì „ì˜ í´ë˜ìŠ¤ëª…ê³¼ ë©”ì†Œë“œëª… í˜¸ì¶œ
 	}
 
 	/* error */
 	public static void e(String log)
 	{
 		android.util.Log.e(Tag, new Exception().getStackTrace()[1].getClassName() + "::" 
-				+ new Exception().getStackTrace()[1].getMethodName() + "():" + log); //ÇÑ ¼öÁØ ÀÌÀüÀÇ Å¬·¡½º¸í°ú ¸Ş¼Òµå¸í È£Ãâ
+				+ new Exception().getStackTrace()[1].getMethodName() + "():" + log); //í•œ ìˆ˜ì¤€ ì´ì „ì˜ í´ë˜ìŠ¤ëª…ê³¼ ë©”ì†Œë“œëª… í˜¸ì¶œ
 	}
 }

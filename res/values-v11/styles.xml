@@ -1,0 +1,10 @@
+<resources>
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+        <item name="android:typeface">sans</item>
+    </style>
+ 
+    <style name="AppTheme.DialogWhenLarge" parent="@android:style/Theme.Holo.Light.DialogWhenLarge">
+        <item name="android:typeface">sans</item>
+    </style> 
+</resources>
+

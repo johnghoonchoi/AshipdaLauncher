@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#0000"
+    android:background="#00ff"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -20,9 +20,7 @@
                 android:id="@+id/btnEditDelete"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:text="삭제"
-                android:textSize="30sp"
-                android:textStyle="bold" >
+                android:background="@drawable/btneditdeletexml" >
             </Button>
         </LinearLayout>
 
@@ -35,22 +33,20 @@
                 android:id="@+id/btnEditCancel"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:text="취소"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:background="@drawable/btneditcancelxml" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="#0000"
         android:orientation="vertical" >
 
         <ListView
             android:id="@+id/sosEditList"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
+            android:layout_height="fill_parent"
+            android:textColor="#0000" >
         </ListView>
     </LinearLayout>
 

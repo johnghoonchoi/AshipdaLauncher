@@ -133,7 +133,7 @@ public class SosPage extends Activity {
 		    		   if(isthisfukinnew == null)
 		    			   break;
 		    	   }
-		    	   editor.putString(String.valueOf(j-1),shit);
+		    	   editor.putString(String.valueOf(j),shit);
                    editor.commit();
                    items.clear();
                    for(int i=1; i <10; i++)

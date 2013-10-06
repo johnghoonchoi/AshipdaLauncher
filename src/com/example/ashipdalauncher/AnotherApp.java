@@ -61,24 +61,23 @@ public class AnotherApp extends Activity {
 			}
 		});
 		
-		ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-		List<RecentTaskInfo> taskInfo = am.getRecentTasks(10,  Intent.FLAG_ACTIVITY_NEW_TASK);
-		MyAdapter2 adapter2 = new MyAdapter2(this, R.layout.listitem, taskInfo);
-		ListView lv_recentApp = (ListView) findViewById(R.id.recentApp);
-		lv_recentApp.setAdapter(adapter2);
-		/*
-		lv_recentApp.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position,
-					long id) {
-				RecentTaskInfo temp = pkgAppsList.get(position);
-				Intent i = new Intent();
-				i.setClassName(temp.activityInfo.packageName, temp.activityInfo.name);
-				startActivity(i);
-			}
-		});
-	    컴파일하려고 넣음 ㅇㅇ*/	
+//		ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+//		List<RecentTaskInfo> taskInfo = am.getRecentTasks(10,  Intent.FLAG_ACTIVITY_NEW_TASK);
+//		MyAdapter2 adapter2 = new MyAdapter2(this, R.layout.listitem, taskInfo);
+//		ListView lv_recentApp = (ListView) findViewById(R.id.recentApp);
+//		lv_recentApp.setAdapter(adapter2);
+//		
+//		lv_recentApp.setOnItemClickListener(new OnItemClickListener() {
+//
+//			@Override
+//			public void onItemClick(AdapterView<?> parent, View view, int position,
+//					long id) {
+//				RecentTaskInfo temp = pkgAppsList.get(position);
+//				Intent i = new Intent();
+//				i.setClassName(temp.activityInfo.packageName, temp.activityInfo.name);
+//				startActivity(i);
+//			}
+//		});
 		
 //		PackageManager pm = getPackageManager();
 //		ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
@@ -155,45 +154,4 @@ public class AnotherApp extends Activity {
 		}
 
 	}
-	 
-	 public class MyAdapter2 extends ArrayAdapter<RecentTaskInfo>{
-		 List<RecentTaskInfo> child;
-
-
-		 public MyAdapter2(Context context, int textViewResourceId, List<RecentTaskInfo> objects) {
-			 super(context, textViewResourceId, objects);
-			 child = objects;
-		 }
-
-		 @Override
-		 public int getCount() {
-			 // TODO Auto-generated method stub
-			 return child.size();
-		 }
-
-		 @Override
-		 public RecentTaskInfo getItem(int position) {
-			 // TODO Auto-generated method stub
-			 return child.get(position);
-		 }
-
-		 @Override
-		 public View getView(int position, View convertView, ViewGroup parent) {
-			 if(convertView == null) {
-				 LayoutInflater li = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-				 convertView = li.inflate(R.layout.listitem, null);
-			 }
-			 ImageView icon = (ImageView) convertView.findViewById(R.id.ivIcon);
-			 TextView name = (TextView) convertView.findViewById(R.id.tvName);
-
-			 RecentTaskInfo temp = child.get(position);
-
-
-			 //		   icon.setImageDrawable(temp.loadIcon(getPackageManager()));
-			 //		   name.setText(temp.loadLabel(getPackageManager()));
-
-
-			 return convertView;
-		 }
-	 }
 }
